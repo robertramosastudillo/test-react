@@ -28,9 +28,8 @@ const UserList = () => {
           </TR>
         </Thead>
         <tbody>
-          {users.map((user) => (
-            <UserListItem key={user.id} user={user} />
-          ))}
+          {!loading &&
+            users.map((user) => <UserListItem key={user.id} user={user} />)}
         </tbody>
       </Table>
       {users.length === 0 && <ErrorAlert>No users</ErrorAlert>}
